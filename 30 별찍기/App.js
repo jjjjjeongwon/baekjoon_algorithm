@@ -5,9 +5,9 @@ let input = require("fs").readFileSync(__dirname + "/input.txt", { encoding: "ut
 // let input = require('fs').readFileSync(0,{encoding:"utf-8"}).split('\n')[0].split(' ').map(Number);
 
 console.log(input);
+let star = '';
 
-let sum = 0;
-for (i = 0; i <= input; i++) {
-  sum = sum + i;
+for(i=1; i<=input; i++){
+  star = star + "*"+ "\n";
 }
-console.log(sum);
+console.log(star);
