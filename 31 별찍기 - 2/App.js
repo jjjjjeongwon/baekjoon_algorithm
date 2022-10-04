@@ -5,9 +5,10 @@ let input = require("fs").readFileSync(__dirname + "/input.txt", { encoding: "ut
 // let input = require('fs').readFileSync(0,{encoding:"utf-8"}).split('\n')[0].split(' ').map(Number);
 
 // console.log(input);
-let star = "*";
+// let blank = " ";
+// let star = "*";
 
 for(i=1; i<=input; i++){
-  console.log(star.repeat(i));
+  console.log((" ").repeat(input-i)+("*").repeat(i));
 }
-// console.log(star);
+
