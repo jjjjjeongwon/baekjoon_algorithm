@@ -15,8 +15,6 @@ let answer='';
 for(i=0; i<firstInput[0]; i++){
   if(secondInput[i]<firstInput[1]){
     answer += secondInput[i]+' '; 
-  }else{
-    
   }
 
 }
