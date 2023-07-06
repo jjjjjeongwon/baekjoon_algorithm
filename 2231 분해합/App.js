@@ -7,6 +7,7 @@ let input = require('fs')
 let targetNumber = Number(input);
 
 for (let i = 0; i < 1000000; i++) {
+  if (targetNumber <= i) break;
   let arr = String(i).split('').map(Number);
   let sum = arr.reduce((a, b) => a + b, 0);
 
