@@ -5,30 +5,29 @@ let input = require('fs')
 let countCommand = Number(input[1]);
 let mainStack = input[0].split('');
 let additionStack = [];
+let wordList, addWord;
 
 for (let i = 2; i < 2 + countCommand; i++) {
-  let wordList = input[i].split(' ');
-
-  if (wordList[0] === 'L') {
-    if (mainStack.length !== 0) {
-      additionStack.push(mainStack.pop());
-    }
-  } else if (wordList[0] === 'D') {
-    if (additionStack.length !== 0) {
-      mainStack.push(additionStack.pop());
-    }
-  } else if (wordList[0] === 'B') {
-    mainStack.pop();
-  } else if (wordList[0] === 'P') {
-    mainStack.push(wordList[1]);
+  [wordList, addWord] = input[i].split(' ');
+  switch (wordList) {
+    case 'L':
+      if (mainStack.length !== 0) {
+        additionStack.push(mainStack.pop());
+      }
+      break;
+    case 'D':
+      if (additionStack.length !== 0) {
+        mainStack.push(additionStack.pop());
+      }
+      break;
+    case 'B':
+      mainStack.pop();
+      break;
+    case 'P':
+      mainStack.push(addWord);
+      break;
   }
 }
 
-if (additionStack.length !== 0) {
-  let count = additionStack.length;
-  for (let i = 0; i < count; i++) {
-    mainStack.push(additionStack.pop());
-  }
-}
-
-console.log(mainStack.join(''));
+mainStack = mainStack.join('') + additionStack.reverse().join('');
+console.log(mainStack);

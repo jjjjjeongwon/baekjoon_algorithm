@@ -1,5 +1,12 @@
-abcd
-3
-P x
+dmiqn
+10
+P m
+P n
+D
+D
 L
-P y
+L
+P a
+P s
+D
+D
