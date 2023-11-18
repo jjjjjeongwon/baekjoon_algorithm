@@ -8,4 +8,4 @@ let input = require("fs")
 
 const [A, B] = input;
 
-console.log(A, B);
+console.log((A + B) * (A - B));
